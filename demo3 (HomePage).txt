@@ -1,0 +1,87 @@
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    title: "Deliver It",
+    home: Homepage(),
+    theme: ThemeData(
+      primarySwatch: Colors.green,
+    ),
+  ));
+}
+
+class Homepage extends StatelessWidget {
+  const Homepage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Deliver It"),
+      ),
+      body: Container(),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("Aman Sinha"),
+              accountEmail: Text("amansinha394@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://cdn.pixabay.com/photo/2018/08/28/12/41/avatar-3637425_960_720.png"),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.list),
+              title: Text("Shops List"),
+              subtitle: Text("Local Shops"),
+              trailing: Icon(Icons.search),
+            ),
+            ListTile(
+                leading: Icon(Icons.satellite),
+                title: Text("My Location"),
+                subtitle: Text("Current: Patna, Bihar"),
+                trailing: Icon(Icons.map_outlined)),
+            ListTile(
+              leading: Icon(Icons.money),
+              title: Text("My Orders"),
+              subtitle: Text("Total: 10"),
+              trailing: Icon(Icons.edit),
+            ),
+            ListTile(
+              leading: Icon(Icons.food_bank),
+              title: Text("Wishlist"),
+              subtitle: Text("Total: 10"),
+              trailing: Icon(Icons.edit),
+            ),
+            ListTile(
+              leading: Icon(Icons.wallet_giftcard),
+              title: Text("My wallet"),
+              subtitle: Text("Amount: Rs 100"),
+              trailing: Icon(Icons.add),
+            ),
+            ListTile(
+              leading: Icon(Icons.details),
+              title: Text("Offers"),
+              subtitle: Text("T&C apply"),
+              trailing: Icon(Icons.search_sharp),
+            ),
+            ListTile(
+              leading: Icon(Icons.compare),
+              title: Text("Feedback"),
+              subtitle: Text("Write us"),
+              trailing: Icon(Icons.send),
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.edit),
+      ),
+    );
+  }
+}

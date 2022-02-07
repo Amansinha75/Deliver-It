@@ -1,0 +1,89 @@
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    title: "Deliver It",
+    home: Homepage(),
+    theme: ThemeData(
+      primarySwatch: Colors.green,
+    ),
+  ));
+}
+
+class Homepage extends StatelessWidget {
+  const Homepage({Key? key}) : super(key: key);
+
+  get floatingActionButtonLocation => null;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.greenAccent,
+      appBar: AppBar(
+        title: Text("Deliver It"),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(1),
+        child: SingleChildScrollView(
+          child: Card(
+            child: Column(
+              children: [
+                Image.asset(
+                  "assets/1.png",
+                  fit: BoxFit.contain,
+                ),
+                SizedBox(height: 30),
+                Text(
+                  "LOGIN WITH YOUR MOBILE NUMBER/E-MAIL ID",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                ),
+                SizedBox(height: 50),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: "Enter Here",
+                        labelText: "Mobile Number/E-Mail ID"),
+                  ),
+                ),
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: TextField(
+                    keyboardType: TextInputType.numberWithOptions(),
+                    decoration: InputDecoration(
+                        hintText: "Enter Here", labelText: "OPT"),
+                  ),
+                ),
+                SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: RaisedButton(
+                    onPressed: () {},
+                    child: Text("Enter"),
+                    color: Colors.green,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: RaisedButton(
+                    onPressed: () {},
+                    child: Text("NEW ACCOUNT"),
+                    color: Colors.green,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(39),
+                  child: Text("TERMS OF USE"),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

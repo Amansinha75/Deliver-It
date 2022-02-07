@@ -1,0 +1,49 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    title: "demoApp",
+    home: Homepage(),
+  ));
+}
+
+class Homepage extends StatelessWidget {
+  const Homepage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("DemoApp"),
+      ),
+      body: Container(
+        color: Colors.grey,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(20),
+              width: 100,
+              height: 100,
+              color: Colors.orange,
+            ),
+            Container(
+              padding: const EdgeInsets.all(20),
+              width: 100,
+              height: 100,
+              color: Colors.white,
+            ),
+            Container(
+              padding: const EdgeInsets.all(20),
+              width: 100,
+              height: 100,
+              color: Colors.green,
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
